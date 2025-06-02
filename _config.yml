@@ -90,4 +90,3 @@ defaults:
       layout: "project"
       comments: false
       share: true
-```
