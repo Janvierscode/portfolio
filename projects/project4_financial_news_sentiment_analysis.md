@@ -9,8 +9,8 @@ Market sentiment, heavily influenced by news and media, can significantly impact
 **Data Sources:**
 *   **News Data:**
     *   Financial news headlines/articles collected via:
-        *   News APIs (e.g., NewsAPI.org, Alpha Vantage news & sentiment, EOD Historical Data news API - many have free tiers for limited use).
-        *   Web scraping financial news websites (e.g., Reuters, Bloomberg, Yahoo Finance news sections) for specific company news or market news. (Note: Be mindful of website terms of service if scraping).
+        *   News APIs (NewsAPI.org<!--, Alpha Vantage news & sentiment, EOD Historical Data news API - many have free tiers for limited use-->).
+        *   Web scraping financial news websites (Reuters<!--, Bloomberg, Yahoo Finance news sections) for specific company news or market news. (Note: Be mindful of website terms of service if scraping-->).
 *   **Market Data:**
     *   Historical daily stock price data (Adjusted Close) for the companies or market index corresponding to the news collected. This can be sourced using `yfinance` or other financial data APIs.
 
@@ -23,7 +23,7 @@ Market sentiment, heavily influenced by news and media, can significantly impact
     *   Sentiment Analysis Libraries:
         *   `VADER (Valence Aware Dictionary and sEntiment Reasoner)`: Good for social media and general text, often effective for news headlines.
         *   `TextBlob`: Another popular library for sentiment analysis.
-        *   Transformer-based models (e.g., from Hugging Face `transformers` library like FinBERT): For more sophisticated, finance-specific sentiment (more advanced).
+        *   Transformer-based models (from Hugging Face `transformers` <!--library like FinBERT): For more sophisticated, finance-specific sentiment (more advanced-->).
     *   `Matplotlib` & `Seaborn`: For visualizing sentiment scores, trends, and correlations with market data.
     *   `yfinance` or similar: For fetching stock market data.
 *   **Excel (Optional):**
@@ -36,7 +36,7 @@ Market sentiment, heavily influenced by news and media, can significantly impact
 
 1.  **Data Collection:**
     *   Define target companies, sectors, or keywords for news collection.
-    *   Collect news articles/headlines and associated metadata (e.g., publication date, source) using an API or web scraping.
+    *   Collect news articles/headlines and associated metadata (publication date and source) using an API or web scraping.
     *   Collect corresponding historical stock price data for the same period.
 
 2.  **Text Preprocessing:**
@@ -44,7 +44,7 @@ Market sentiment, heavily influenced by news and media, can significantly impact
     *   Perform standard NLP preprocessing: Tokenization, conversion to lowercase, stop-word removal, lemmatization/stemming.
 
 3.  **Sentiment Analysis:**
-    *   Apply a chosen sentiment analysis tool/model (e.g., VADER, TextBlob, or a Transformer model) to each news item to get a sentiment score (e.g., a polarity score ranging from -1 to +1, and/or a classification like positive/negative/neutral).
+    *   Apply a chosen sentiment analysis tool/model (<!--e.g., VADER, TextBlob, or a -->Transformer model) to each news item to get a sentiment score (a polarity score ranging from -1 to +1<!--, and/or a classification like positive/negative/neutral-->).
     *   Aggregate sentiment scores daily or weekly for each company/sector.
 
 4.  **Data Integration & Analysis:**
