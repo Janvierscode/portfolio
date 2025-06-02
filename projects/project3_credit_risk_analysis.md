@@ -11,18 +11,18 @@ Lending institutions face the risk of borrowers defaulting on loans, leading to 
     *   Lending Club Loan Data (available on Kaggle, though it's very large and might need significant sub-sampling and simplification).
     *   German Credit Data (from UCI Machine Learning Repository).
     *   Other credit approval or loan default datasets found on platforms like Kaggle or in academic repositories.
-*   The dataset should ideally contain borrower characteristics (e.g., income, employment length, credit score, loan amount, loan purpose, home ownership) and a target variable indicating whether the loan defaulted or was fully paid.
+*   The dataset should ideally contain borrower characteristics (income, employment length, credit score, loan amount, loan purpose, home ownership) and a target variable indicating whether the loan defaulted or was fully paid.
 
 **Tools & Technologies (Planned):**
 *   **Python:**
     *   `pandas`: For data loading, cleaning, manipulation, and EDA.
     *   `NumPy`: For numerical computations.
-    *   `Matplotlib` & `Seaborn`: For data visualization during EDA (e.g., distributions of variables, relationships between features and defaults).
+    *   `Matplotlib` & `Seaborn`: For data visualization during EDA (distributions of variables<!--, relationships between features and defaults-->).
     *   `scikit-learn`: For:
-        *   Data preprocessing (e.g., `StandardScaler` for numerical features, `OneHotEncoder` for categorical features).
+        *   Data preprocessing ( `StandardScaler` for numerical features, `OneHotEncoder` for categorical features).
         *   Splitting data into training and testing sets (`train_test_split`).
-        *   Building classification models (e.g., Logistic Regression, Decision Tree, Random Forest).
-        *   Evaluating model performance (e.g., accuracy, precision, recall, F1-score, ROC AUC).
+        *   Building classification models (Logistic Regression, <!--Decision Tree, Random Forest -->).
+        *   Evaluating model performance (accuracy<!--, precision, recall, F1-score, ROC AUC-->).
 *   **Excel (Optional):**
     *   For initial data inspection or creating summary tables of EDA findings.
 *   **Tableau / Power BI (Optional):**
@@ -35,23 +35,23 @@ Lending institutions face the risk of borrowers defaulting on loans, leading to 
     *   Understand the meaning of each feature and the target variable (loan default status).
 
 2.  **Data Cleaning & Preprocessing:**
-    *   Handle missing values (e.g., imputation or removal).
+    *   Handle missing values (imputation <!--or removal-->).
     *   Correct data types.
     *   Identify and handle outliers if necessary.
-    *   Encode categorical variables (e.g., one-hot encoding or label encoding).
+    *   Encode categorical variables (one-hot encoding <!--or label encoding-->).
     *   Scale numerical features if required by the chosen model.
 
 3.  **Exploratory Data Analysis (EDA):**
     *   Analyze the distribution of the target variable (default vs. non-default) to check for class imbalance.
-    *   Explore relationships between individual features and the likelihood of default using visualizations (e.g., bar charts for default rates by loan purpose, box plots for income of defaulters vs. non-defaulters).
+    *   Explore relationships between individual features and the likelihood of default using visualizations (bar charts for default rates by loan purpose<!--, box plots for income of defaulters vs. non-defaulters-->).
     *   Examine correlations between features.
 
 4.  **Feature Engineering (Optional but often beneficial):**
-    *   Create new features from existing ones if it makes sense (e.g., debt-to-income ratio).
+    *   Create new features from existing ones if it makes sense (debt-to-income ratio).
 
 5.  **Model Building & Training (Simplified):**
     *   Split the data into training and testing sets.
-    *   Select a few simple classification models (e.g., Logistic Regression, Decision Tree).
+    *   Select a few simple classification models (Logistic Regression<!--, Decision Tree-->).
     *   Train the models on the training data.
 
 6.  **Model Evaluation:**
