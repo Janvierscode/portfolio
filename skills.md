@@ -4,7 +4,7 @@
 
 *   **Data Analysis & Manipulation:** Python (Pandas, NumPy), Excel (Advanced functions, PivotTables, Power Query), SQL
 *   **Data Visualization:** Tableau, Power BI, Python (Matplotlib, Seaborn)
-*   **Programming Languages:** Python, SQL
+*   **Programming Languages:** Python, R, SQL
 *   **Machine Learning (Basic/Intermediate):**
     *   Concepts: Classification, Regression, Clustering
     *   Python Libraries: Scikit-learn (for models like Logistic Regression, Decision Trees, Random Forests)
@@ -14,7 +14,7 @@
     *   Credit Risk Concepts (e.g., default prediction factors)
     *   Sentiment Analysis (Basic NLP concepts)
 *   **Databases:** Relational database concepts (general understanding)
-*   **Tools & Platforms:** Jupyter Notebooks, Git & GitHub (Version Control), [Mention any specific financial data APIs you plan to use, e.g., yfinance, Alpha Vantage]
+*   **Tools & Platforms:** Jupyter Notebooks,Pycharm, Git & GitHub, yfinance, Alpha Vantage
 
 **Soft Skills:**
 
