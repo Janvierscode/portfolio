@@ -23,7 +23,8 @@ Here are some of the projects I've been working on. These projects demonstrate m
 ## Get In Touch
 
 {% include contact.md %}
-
+<!--
 ---
 *You will need to replace `your_name` and potentially update links/content here and in `_config.yml` when you personalize your portfolio.*
 ```
+-->
