@@ -9,7 +9,7 @@ Many individuals struggle to get a clear understanding of where their money goes
 **Data Sources:**
 *   Anonymized personal bank account and credit card transaction data. This could be:
     *   A sample dataset of transactions (many are available online, or you can create one).
-    *   Your own financial data, carefully anonymized (e.g., by removing names, account numbers, and specific merchant details if sharing the project publicly).
+    *   Your own financial data, carefully anonymized ( by removing names, account numbers, and specific merchant details if sharing the project publicly).
 *   Data should include fields like: Date, Description/Merchant, Category (or raw data to be categorized), Amount.
 *   A self-defined budget for various spending categories.
 
@@ -20,7 +20,7 @@ Many individuals struggle to get a clear understanding of where their money goes
     *   Creating budgets and mapping transactions to categories.
     *   Basic pivot tables and charts for preliminary analysis.
 *   **Python (Optional but Recommended for deeper analysis):**
-    *   `pandas`: For robust data cleaning, transformation, and categorization logic (e.g., using rules or keywords to assign categories to transactions).
+    *   `pandas`: For robust data cleaning, transformation, and categorization logic (sing rules or keywords to assign categories to transactions).
     *   `NumPy`: For numerical calculations.
     *   `Matplotlib`/`Seaborn`: For generating custom static visualizations.
 *   **Power BI / Tableau:**
@@ -29,7 +29,7 @@ Many individuals struggle to get a clear understanding of where their money goes
 **Methodology & Key Analysis Steps:**
 
 1.  **Data Collection & Standardization:**
-    *   Gather transaction data from various sources (if applicable) into a standardized format (e.g., CSV or Excel).
+    *   Gather transaction data from various sources (if applicable) into a standardized format (CSV or Excel).
     *   Define a clear set of spending categories and sub-categories.
 
 2.  **Data Cleaning & Categorization:**
@@ -62,7 +62,7 @@ Many individuals struggle to get a clear understanding of where their money goes
 *   A comparison of actual spending against a defined budget, highlighting areas of overspending or savings.
 *   An interactive dashboard (Power BI/Tableau) that provides a holistic view of personal finances and allows for easy exploration of the data.
 *   (If Python is used) A Jupyter Notebook detailing the data cleaning, categorization, and analysis process.
-*   A summary of insights and actionable recommendations for improving personal financial health (e.g., areas to cut back, savings opportunities).
+*   A summary of insights and actionable recommendations for improving personal financial health (areas to cut back, savings opportunities).
 
 **Potential Business Impact/Use Case:**
 While this is a "personal" finance project, the skills are highly transferable to business contexts. It demonstrates proficiency in data ETL (Extract, Transform, Load), data modeling, dashboard development, and deriving actionable insights from transactional data – skills valuable in financial planning & analysis (FP&A), business intelligence, and any role requiring budget management or cost analysis.
