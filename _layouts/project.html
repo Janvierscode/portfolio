@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<article class="project">
+    <header class="project-header">
+        <div class="container">
+            <h1 class="project-title">{{ page.title }}</h1>
+            {% if page.subtitle %}
+            <p class="project-subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+            
+            <div class="project-meta">
+                {% if page.technologies %}
+                <div class="project-technologies">
+                    {% for tech in page.technologies %}
+                    <span class="tech-tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                {% if page.github_url or page.demo_url %}
+                <div class="project-links">
+                    {% if page.github_url %}
+                    <a href="{{ page.github_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    {% endif %}
+                    {% if page.demo_url %}
+                    <a href="{{ page.demo_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="project-content">
+            {{ content }}
+        </div>
+        
+        <nav class="project-navigation">
+            <a href="{{ '/projects' | relative_url }}" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+        </nav>
+    </div>
+</article>
