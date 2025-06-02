@@ -1,20 +1,20 @@
 # _config.yml
 
 # Site settings
-title: Your Name - Data Analyst Portfolio
+title: Janvier Iyakaremye - Data Analyst Portfolio
 description: >- # this means to ignore newlines until "baseurl:"
   A portfolio showcasing data analysis projects in finance,
-  demonstrating skills in Python, Excel, Power BI, and Tableau.
+  demonstrating skills in Python, R Excel, Power BI, and Tableau.
 theme: jekyll-theme-minimal # A common, clean theme for GitHub Pages
 
 # Optional: Add your GitHub username if you want a link in the footer
-# github_username: your_github_username
+github_username: janvierscode
 
 # Optional: Add your LinkedIn profile URL if you want a link
-# linkedin_url: https://www.linkedin.com/in/your_linkedin_profile/
+linkedin_url: https://www.linkedin.com/in/janvierscode/
 
 # Optional: Add your email address
-# email: your.email@example.com
+email: iyakaremyejanvier@gmail.com
 
 # Build settings
 markdown: kramdown # Default Markdown processor for Jekyll
