@@ -51,6 +51,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -61,6 +62,8 @@ body {
     background-color: var(--bg-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
 }
 
 /* Container */
@@ -632,90 +635,426 @@ body {
     border-top: 1px solid var(--border-color);
 }
 
+/* Utility classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+
+.hidden { display: none; }
+.sr-only { 
+    position: absolute; 
+    width: 1px; 
+    height: 1px; 
+    padding: 0; 
+    margin: -1px; 
+    overflow: hidden; 
+    clip: rect(0, 0, 0, 0); 
+    white-space: nowrap; 
+    border: 0; 
+}
+
+/* Ensure minimum font sizes on mobile */
+@media (max-width: 768px) {
+    .card-title,
+    .section-title,
+    .hero-title,
+    .page-title {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* Prevent text from being too small */
+    small,
+    .text-sm {
+        font-size: 0.9rem !important;
+    }
+
+    /* Better line heights for readability */
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.3;
+    }
+
+    /* Improved list styling */
+    ul, ol {
+        padding-left: var(--spacing-lg);
+    }
+
+    li {
+        margin-bottom: var(--spacing-xs);
+    }
+
+    /* Better code block handling */
+    code, pre {
+        font-size: 0.9rem;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    pre {
+        overflow-x: auto;
+        padding: var(--spacing-sm);
+        border-radius: var(--radius-sm);
+        background-color: var(--bg-secondary);
+    }
+}
+
+/* Loading states and animations */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Enhanced mobile navigation */
+    .nav-container {
+        padding: 0 var(--spacing-md);
+        height: 3.5rem;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 4rem;
+        top: 3.5rem;
         flex-direction: column;
         background-color: var(--bg-primary);
         width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: var(--shadow-medium);
+        text-align: left;
+        transition: left 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         padding: var(--spacing-lg) 0;
+        border-top: 1px solid var(--border-color);
+        z-index: 999;
+        max-height: calc(100vh - 3.5rem);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
         left: 0;
     }
 
-    .nav-toggle {
-        display: flex;
+    .nav-link {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: 1.1rem;
+        border-bottom: 1px solid var(--border-color);
+        display: block;
+        margin: 0;
     }
 
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .nav-toggle {
+        display: flex;
+        padding: var(--spacing-xs);
+        z-index: 1001;
+    }
+
+    .bar {
+        width: 22px;
+        height: 2px;
+    }
+
+    /* Enhanced typography for mobile */
     .hero-title {
-        font-size: 2.25rem;
+        font-size: 2rem;
+        line-height: 1.3;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: var(--spacing-lg);
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin-bottom: var(--spacing-md);
     }
 
+    .section-subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Enhanced container and spacing */
+    .container {
+        padding: 0 var(--spacing-md);
+        max-width: 100%;
+    }
+
+    .main-content {
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .hero {
+        padding: var(--spacing-xl) 0;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding: 0 var(--spacing-md);
+    }
+
+    /* Enhanced button styling */
     .hero-cta {
         flex-direction: column;
         align-items: center;
+        gap: var(--spacing-md);
     }
 
     .btn {
-        width: fit-content;
+        width: 100%;
+        max-width: 280px;
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: 1rem;
+        text-align: center;
     }
 
+    /* Enhanced grid layouts */
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-lg);
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
 
     .contact-info {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
 
     .skills-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Enhanced card styling */
+    .card {
+        margin-bottom: var(--spacing-md);
+        border-radius: var(--radius-md);
+    }
+
+    .card-header,
+    .card-content,
+    .card-footer {
+        padding: var(--spacing-md);
+    }
+
+    .project-card {
+        border-radius: var(--radius-md);
+    }
+
+    .project-image {
+        height: 200px;
+    }
+
+    /* Enhanced project navigation */
+    .project-nav {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md) 0;
+    }
+
+    .project-nav .btn {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* Footer improvements */
+    .footer-container {
+        text-align: center;
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .social-links {
+        justify-content: center;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .social-link {
+        font-size: 1.2rem;
+        padding: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens */
+    .nav-container {
+        padding: 0 var(--spacing-sm);
+        height: 3rem;
+    }
+
+    .nav-menu {
+        top: 3rem;
+        padding: var(--spacing-md) 0;
+    }
+
+    .nav-link {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
     }
 
     .container {
         padding: 0 var(--spacing-sm);
     }
 
-    .main-content {
-        padding: var(--spacing-md) 0;
+    .hero-content {
+        padding: 0 var(--spacing-sm);
     }
 
     .section {
-        padding: var(--spacing-xl) 0;
+        padding: var(--spacing-lg) 0;
+    }
+
+    .hero {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.95rem;
+        max-width: 260px;
+    }
+
+    .card-header,
+    .card-content,
+    .card-footer {
+        padding: var(--spacing-sm);
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .projects-grid {
+        gap: var(--spacing-md);
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .social-link {
+        font-size: 1.1rem;
+        padding: var(--spacing-xs);
     }
 }
 
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 1.875rem;
+/* Mobile landscape optimization */
+@media (max-width: 926px) and (orientation: landscape) {
+    .hero {
+        padding: var(--spacing-lg) 0;
     }
 
-    .hero-subtitle {
-        font-size: 1.125rem;
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-sm);
     }
 
     .hero-description {
         font-size: 1rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .nav-container {
+        height: 3rem;
+    }
+
+    .nav-menu {
+        top: 3rem;
+    }
+}
+
+/* Tablet improvements */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
     }
 
     .section-title {
-        font-size: 1.75rem;
-    }
-
-    .page-title {
-        font-size: 2rem;
+        font-size: 2.25rem;
     }
 }
 
@@ -762,5 +1101,121 @@ body {
 
     .main-content {
         margin-top: 0;
+    }
+}
+
+/* Mobile touch enhancements */
+@media (max-width: 768px) {
+    /* Touch-friendly navigation */
+    .nav-toggle {
+        min-width: 44px;
+        min-height: 44px;
+        justify-content: center;
+        align-items: center;
+        padding: var(--spacing-xs);
+        border-radius: var(--radius-sm);
+        transition: background-color 0.2s ease;
+    }
+
+    .nav-toggle:hover,
+    .nav-toggle:focus {
+        background-color: var(--bg-tertiary);
+        outline: none;
+    }
+
+    .nav-toggle:active {
+        background-color: var(--bg-secondary);
+    }
+
+    /* Enhanced nav links for touch */
+    .nav-link {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+
+    .nav-link:active {
+        background-color: var(--primary-color);
+        color: white;
+        transform: scale(0.98);
+    }
+
+    /* Better button touch targets */
+    .btn {
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn:active {
+        transform: scale(0.98);
+    }
+
+    /* Enhanced card interactions */
+    .card,
+    .project-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .card:active,
+    .project-card:active {
+        transform: scale(0.98);
+    }
+
+    /* Social links touch targets */
+    .social-link {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .social-link:active {
+        transform: scale(0.95);
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    /* Improved form elements (if any) */
+    input,
+    textarea,
+    select,
+    button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    /* Better spacing for readability */
+    p, li {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    /* Improved image handling */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Prevent horizontal scrolling */
+    .container,
+    .nav-container,
+    .hero-content,
+    .section {
+        max-width: 100%;
+        overflow-x: hidden;
     }
 }
